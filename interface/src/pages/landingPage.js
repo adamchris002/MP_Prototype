@@ -4,7 +4,6 @@ import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
 import UAParser from "ua-parser-js";
 import SmallCarousel from "../components/smallCarousel";
 import Section from "../components/section";
-import { Image } from "semantic-ui-react";
 import MyFooter from "../components/footer";
 
 const LandingPage = ({ deviceType }) => {

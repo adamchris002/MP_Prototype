@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Paper, Typography } from "@mui/material";
-import { Container, Image } from "semantic-ui-react";
+import { Paper } from "@mui/material";
+import { Container } from "semantic-ui-react";
 
 import FooterImage from "../assets/footer.png"
 

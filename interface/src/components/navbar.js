@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,35 +11,29 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import {
-  FormControl,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  TextField,
-} from "@mui/material";
+import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 const pages = ["Home", "About Us", "Collection", "Room Booking"];
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
+  // const [anchorElNav, setAnchorElNav] = useState(null);
+  // const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenNavMenu = (event) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   return (
     <AppBar position="static" sx={{ background: "white" }}>
@@ -51,14 +45,14 @@ function ResponsiveAppBar() {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={() => {}}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
-              anchorEl={anchorElNav}
+              // anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "left",
@@ -68,14 +62,14 @@ function ResponsiveAppBar() {
                 vertical: "top",
                 horizontal: "left",
               }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              // open={Boolean(anchorElNav)}
+              onClose={() => {}}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={() => {}}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -84,7 +78,7 @@ function ResponsiveAppBar() {
           <Box
             sx={{
               flexGrow: 1,
-               display: { xs: "none", md: "flex" }
+              display: { xs: "none", md: "flex" },
             }}
           >
             {pages.map((page) => (
@@ -92,7 +86,7 @@ function ResponsiveAppBar() {
                 disableRipple
                 variant="raised"
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => {}}
                 sx={{
                   my: 2,
                   color: "black",
@@ -128,7 +122,7 @@ function ResponsiveAppBar() {
               }}
             />
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={() => {}} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
