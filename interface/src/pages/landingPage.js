@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import CarouselComponent from "../components/carousel";
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
-import UAParser from "ua-parser-js";
 import SmallCarousel from "../components/smallCarousel";
 import Section from "../components/section";
 import MyFooter from "../components/footer";
 
-const LandingPage = ({ deviceType }) => {
+const LandingPage = () => {
   const dummyApplication = [
     "https://www.verywellfamily.com/thmb/1QEaNZjVwwfsC3l9qqI9-iP-_Oo=/fit-in/1500x750/filters:format(png):fill(white):max_bytes(150000):strip_icc()/khan-academy-06eedd6edf804534be4f843659466971.jpg",
     "https://www.internetmatters.org/wp-content/uploads/2020/12/mt-big.png",
@@ -15,6 +14,7 @@ const LandingPage = ({ deviceType }) => {
     "https://i.pcmag.com/imagery/reviews/07w3TE0qtevWbXyZZOsB6gK-45..v1680809084.jpg",
     "https://assets-a1.kompasiana.com/items/album/2022/12/22/screenshot-847-63a3d1e608a8b54fcb77b6f2.png",
   ];
+
 
   const [hoveredItem, setHoveredItem] = useState(null);
 
@@ -75,7 +75,7 @@ const LandingPage = ({ deviceType }) => {
         </div>
       </div>
       <Section>
-        <SmallCarousel deviceType={deviceType} />
+        <SmallCarousel />
       </Section>
       <div
         style={{
@@ -142,18 +142,4 @@ const LandingPage = ({ deviceType }) => {
   );
 };
 
-LandingPage.getInitialProps = ({ req }) => {
-  let userAgent;
-  if (req) {
-    userAgent = req.headers["user-agent"];
-  } else {
-    userAgent = navigator.userAgent;
-  }
-  const parser = new UAParser();
-  parser.setUA(userAgent);
-  const result = parser.getResult();
-  const deviceType = (result.device && result.device.type) || "desktop";
-  return { deviceType };
-};
-
-export default LandingPage;
+export default LandingPage
